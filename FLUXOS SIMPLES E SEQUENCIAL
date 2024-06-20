@@ -1,0 +1,61 @@
+FLUXOS SIMPLES E SEQUENCIAL
+
+
+INICIO
+
+PEDIR NOME DA PESSOA
+
+ARMAZENAR O NOME DA PESSOA
+
+JUNTAR O NOME DA PESSOA AO TEXTO DE "BOM DIA"
+
+MOSTRAR A FRASE MONTADA
+
+FINAL
+
+
+INICIO principal
+    MOSTRAR 'DIGITE SEU NOME:'
+    ESPERAR_DIGITAÇÃO_> NOME
+    JUNTAR_TEXTO 'BOM DIA', NOME_>SAUDACAO
+    MOSTRAR_TEXTOSAUDACAO
+FIM
+
+ESCREVA "--- Moisés, bem-vindo ao App Ada Poupança ---"
+
+INTEIRO i
+REAL valor, saldo, poupanca
+
+saldo <- 1000.00
+poupanca <- 500.00
+i <- 0
+
+ENQUANTO i != 3 FAÇA
+    ESCREVA "Digite 1 para APLICAR, 2 para RESGATAR e 3 para SAIR: "
+    LEIA i
+    SE i == 1 ENTAO FAÇA
+        ESCREVA "Valor da aplicação: "
+        LEIA valor
+        SE valor > saldo ENTAO FAÇA
+            ESCREVA "Saldo de conta corrente insuficiente"
+        SENAO FAÇA
+            saldo <- saldo - valor
+            poupanca <- poupanca + valor
+            ESCREVA "Aplicação realizada com sucesso"
+        FIM_SE
+    SENAO FAÇA
+        SE i == 2 FACA
+            ESCREVA "Valor do resgate: "
+            LEIA valor
+            SE valor > poupanca ENTAO FAÇA
+                ESCREVA "Saldo de poupança insuficiente"
+            SENAO FAÇA
+                saldo <- saldo + valor
+                poupanca <- poupanca - valor
+                ESCREVA "Resgate realizado com sucesso"
+            FIM_SE
+        SENAO
+            ESCREVA "Até logo!"
+        FIM_SE
+    FIM_SE
+FIM_ENQUANTO
